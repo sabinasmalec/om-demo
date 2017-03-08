@@ -22,7 +22,7 @@
     },
     methods: {
       getSites: function() {
-        this.$http.get('http://private-9eece1-adminpanelmock.apiary-mock.com/monitors').then((response) => {
+        this.$http.get('https://private-9eece1-adminpanelmock.apiary-mock.com/monitors').then((response) => {
 //          console.log('zapisano')
           console.log(response.body.monitors)
         this.sites = response.body.monitors

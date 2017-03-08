@@ -21,14 +21,14 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://private-9eece1-adminpanelmock.apiary-mock.com',
+        target: 'https://private-9eece1-adminpanelmock.apiary-mock.com',
         "protocol": 'http:',
         "port": 80,
         changeOrigin: true,
         secure: false
       },
       '/apiadmin': {
-        target: 'http://private-9eece1-adminpanelmock.apiary-mock.com',
+        target: 'https://private-9eece1-adminpanelmock.apiary-mock.com',
         "protocol": 'http:',
         "port": 80,
         changeOrigin: true,
