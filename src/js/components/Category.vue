@@ -47,7 +47,7 @@
     },
     methods: {
       getCategory: function() {
-        this.$http.get('https://private-9eece1-adminpanelmock.apiary-mock.com/category/'+this.categoryId+'?reloadCache=1').then((response) => {
+        this.$https.get('https://private-9eece1-adminpanelmock.apiary-mock.com/category/'+this.categoryId+'?reloadCache=1').then((response) => {
           console.log(response)
           this.category = response.body.category
           this.disabled = false
@@ -62,7 +62,7 @@
         window.open('http://ogrodymody.pl' + this.category.url);
       },
       save: function() {
-        this.$http.post('https://private-9eece1-adminpanelmock.apiary-mock.com/category/', this.category).then((response) => {
+        this.$https.post('https://private-9eece1-adminpanelmock.apiary-mock.com/category/', this.category).then((response) => {
 //          console.log('zapisano')
           this.getcategory()
         }, (response) => {

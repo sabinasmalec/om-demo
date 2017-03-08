@@ -40,7 +40,7 @@
     },
     methods: {
       getTransactions: function() {
-        this.$http.get('https://private-9eece1-adminpanelmock.apiary-mock.com/transactions').then((response) => {
+        this.$https.get('https://private-9eece1-adminpanelmock.apiary-mock.com/transactions').then((response) => {
          console.log('ok')
           this.transactions = response.body.transactions
 //          this.disabled = false
