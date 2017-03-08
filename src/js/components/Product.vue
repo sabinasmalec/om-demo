@@ -10,7 +10,7 @@
         <form>
           <div class="form-group">
             <label >Identyfikator produktu:</label>
-            <input v-on:keyup="getProduct" v-model="productId" class="form-control">
+            <input v-on:keyup="getProduct" v-model="productId" class="form-control" >
           </div>
           <div v-if="product.id" >
             <b>Lokalizacja:</b>
@@ -64,7 +64,7 @@
     },
     methods: {
       getProduct: function() {
-        this.$https.get('https://private-9eece1-adminpanelmock.apiary-mock.com/product/'+this.productId+'?reloadCache=1').then((response) => {
+        this.$http.get('https://private-9eece1-adminpanelmock.apiary-mock.com/product/'+this.productId+'?reloadCache=1').then((response) => {
           console.log(response)
           console.log(response.body.breadcrumb)
           this.product = response.body
@@ -80,7 +80,7 @@
         window.open('http://ogrodymody.pl' + this.product.url);
       },
       save: function() {
-        this.$https.post('https://private-9eece1-adminpanelmock.apiary-mock.com/product/', this.product).then((response) => {
+        this.$http.post('https://private-9eece1-adminpanelmock.apiary-mock.com/product/', this.product).then((response) => {
 //          console.log('zapisano')
           this.getProduct()
         }, (response) => {
